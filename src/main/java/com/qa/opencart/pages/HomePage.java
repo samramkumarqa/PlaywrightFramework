@@ -9,7 +9,6 @@ public class HomePage {
 	private Page page;
 	
 	//1. String Locators - OR
-	
 	private String search = "input[name='search']";
 	private String searchIcon = "div#search button";
 	private String searchPageHeader = "div#content h1";
