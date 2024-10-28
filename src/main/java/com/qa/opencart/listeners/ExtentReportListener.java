@@ -45,7 +45,7 @@ public class ExtentReportListener implements ITestListener {
 		reporter.config().setReportName("Open Cart Automation Test Results");
 		extentReports.attachReporter(reporter);
 		extentReports.setSystemInfo("System", "MAC");
-		extentReports.setSystemInfo("Author", "Naveen AutomationLabs");
+		extentReports.setSystemInfo("Author", "Ramkumar S");
 		extentReports.setSystemInfo("Build#", "1.1");
 		extentReports.setSystemInfo("Team", "OMS");
 		extentReports.setSystemInfo("Customer Name", "NAL");
@@ -93,7 +93,7 @@ public class ExtentReportListener implements ITestListener {
 	public synchronized void onTestSuccess(ITestResult result) {
 		System.out.println((result.getMethod().getMethodName() + " passed!"));
 		test.get().pass("Test passed");
-		test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
+		//test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
 	}
 
