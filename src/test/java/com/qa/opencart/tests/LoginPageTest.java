@@ -16,12 +16,12 @@ public class LoginPageTest extends BaseTest{
 		Assert.assertEquals(actLoginPageTitle, AppConstants.LOGIN_PAGE_TITLE);
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2, dependsOnMethods = "loginPageNavigationTest")
 	public void forgotPwdLinkExistTest() {
 		Assert.assertTrue(loginPage.isForgotPwdLinkExists());
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3, dependsOnMethods = "loginPageNavigationTest")
 	public void appLoginTest() {
 		Assert.assertTrue(loginPage.doLogin(prop.getProperty("username").trim(), 
 				prop.getProperty("password").trim()));	

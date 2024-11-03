@@ -35,9 +35,11 @@ public class HomePageTest extends BaseTest{
 	}
 	
 	@Test(dataProvider = "getProductData")
-	public void searchTest(String productName) {
+	public void searchTest(String productName) throws InterruptedException {
 		String actualSearchHeader = homepage.doSearch(productName);
 		Assert.assertEquals(actualSearchHeader, "Search - "+productName);
+		Thread.sleep(10000, 0);
+		System.out.println("HOME PAGE TEST END");
 	}
 	
 	

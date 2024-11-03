@@ -6,12 +6,12 @@
 	class-name="com.qa.opencart.listeners.ExtentReportListener" />
 </listeners>
   <test name="Open Cart Home Page Test">
-    <classes>
+	<classes>
       <class name="com.qa.opencart.tests.HomePageTest"/>
     </classes>
   </test> <!-- Test -->
   <test name="Open Cart Login Page Test">
-    <classes>
+	<classes>
       <class name="com.qa.opencart.tests.LoginPageTest"/>
     </classes>
   </test> <!-- Test -->

@@ -90,8 +90,9 @@ public class PlaywrightFactory {
 	public Properties init_prop() {
 		
 		try {
-			FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");
-			prop = new Properties();
+			String configPath = System.getProperty("user.dir") + "/src/test/resources/config/config.properties";
+	        FileInputStream ip = new FileInputStream(configPath);
+	        prop = new Properties();
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
