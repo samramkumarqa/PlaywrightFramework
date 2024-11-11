@@ -4,6 +4,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
+import java.util.Base64;
 import java.util.Properties;
 
 import com.microsoft.playwright.Browser;
@@ -107,11 +108,11 @@ public class PlaywrightFactory {
 	
 	public static String takeScreenshot() {
 		String path = System.getProperty("user.dir")+"/screenshot/"+ System.currentTimeMillis()+".png";
+		//getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
+		byte[] buffer = getPage().screenshot(new Page.ScreenshotOptions().setPath(Paths.get(path)).setFullPage(true));
+		String base64Path = Base64.getEncoder().encodeToString(buffer);
 		
-		getPage().screenshot(new Page.ScreenshotOptions()
-				.setPath(Paths.get(path))
-				.setFullPage(true));
-		return path;
+		return base64Path;
 	}
 
 }
