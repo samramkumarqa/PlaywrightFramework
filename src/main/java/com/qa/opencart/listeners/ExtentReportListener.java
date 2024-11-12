@@ -95,7 +95,6 @@ public class ExtentReportListener implements ITestListener {
 		test.get().pass("Test passed");
 		test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromBase64String(takeScreenshot(),result.getMethod().getMethodName()).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
-		
 	}
 
 	public synchronized void onTestFailure(ITestResult result) {
